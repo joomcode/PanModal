@@ -103,6 +103,14 @@ public protocol PanModalPresentable: AnyObject {
     var scrollIndicatorInsets: UIEdgeInsets { get }
 
     /**
+     We configure the panScrollable's contentInsets interally so override this value
+     to set custom insets.
+
+     - Note: Use `panModalSetNeedsLayoutUpdate()` when updating insets.
+     */
+    var bottomContentInset: CGFloat { get }
+
+    /**
      A flag to determine if scrolling should be limited to the longFormHeight.
      Return false to cap scrolling at .max height.
 
